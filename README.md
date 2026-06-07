@@ -5,7 +5,7 @@ app = Ursina(borderless=False)
 window.title = "Симулятор автомобильного крана 3D"
 Entity.default_shader = lit_with_shadows_shader
 
-# --- РЕАЛИСТИЧНОЕ ОСВЕЩЕНИЕ И ОКРУЖЕНИЕ ---
+# освеение И ОКРУЖЕНИЕ ---
 sun = DirectionalLight(y=40, x=20, z=-20, shadows=True)
 sun.look_at(Vec3(10, 0, 10))
 AmbientLight(color=color.rgba(120, 120, 130, 255))
@@ -23,7 +23,7 @@ ground = Entity(model='plane', texture='noise', color=color.hex('#4B5563'), scal
 # Море на заднем плане
 sea = Entity(model='plane', texture='water', color=color.hex('#1D4ED8'), scale=(200, 1, 100), position=(0, -0.1, -60))
 
-# Склады разноцветных контейнеров на заднем плане (для создания массовки порта)
+# Склады разноцветных контейнеров на заднем плане
 container_colors = [color.red, color.blue, color.green, color.orange, color.yellow]
 import random
 random.seed(42) # Чтобы контейнеры стояли всегда одинаково
