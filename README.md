@@ -5,7 +5,7 @@ app = Ursina(borderless=False)
 window.title = "Симулятор автомобильного крана 3D"
 Entity.default_shader = lit_with_shadows_shader
 
-# освеение И ОКРУЖЕНИЕ ---
+# освещение И ОКРУЖЕНИЕ ---
 sun = DirectionalLight(y=40, x=20, z=-20, shadows=True)
 sun.look_at(Vec3(10, 0, 10))
 AmbientLight(color=color.rgba(120, 120, 130, 255))
