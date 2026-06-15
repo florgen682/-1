@@ -135,9 +135,12 @@ def input(key):
                 cargo.position = target_zone.position + Vec3(0, 1, 0)
                 cargo.rotation = (0, 0, 0)
                 info_panel.text = "ОТЛИЧНО! Груз доставлен в целевую зону. Задача выполнена!"
-            else:
+                else:
                 info_panel.text = "Нельзя сбрасывать груз здесь! Доедьте до синего маркера."
+
 hook.collider = 'box'
 cargo.collider = 'box'
 
 app.run()
+
+
