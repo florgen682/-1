@@ -137,5 +137,7 @@ def input(key):
                 info_panel.text = "ОТЛИЧНО! Груз доставлен в целевую зону. Задача выполнена!"
             else:
                 info_panel.text = "Нельзя сбрасывать груз здесь! Доедьте до синего маркера."
+hook.collider = 'box'
+cargo.collider = 'box'
 
 app.run()
