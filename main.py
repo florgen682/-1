@@ -179,9 +179,7 @@ resume_button.on_click = toggle_pause
 
 # --- ЛАНДШАФТ И ОКРУЖЕНИЕ ---
 terminal_size = (200, 1, 200)
-# ИЗМЕНЕНИЕ: Цвет асфальта сделан светло-серым (ближе к белому)
-ground = Entity(model='plane', texture='noise', color=color.hex('#d4d7db'), scale=terminal_size,
-                texture_scale=(100, 100), position=(0, 0, 0), collider='mesh')
+ground = Entity(model='plane', texture='noise', color=color.dark_gray, scale=terminal_size, texture_scale=(100, 100), position=(0, 0, 0), collider='mesh')
 sea = Entity(model='plane', color=color.azure, scale=(600, 1, 600), position=(0, -0.4, 0), specular=0.6, roughness=0.4)
 
 obstacles = []
