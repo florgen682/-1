@@ -26,7 +26,6 @@ sky_box = Sky(texture='sky_sunset')
 info_panel = Text(text='', position=(-0.85, 0.45), scale=1.1, color=color.gold, parent=camera.ui)
 
 # --- ПРОДВИНУТЫЙ ИНТЕРФЕЙС (UI) ---
-# ИСПРАВЛЕНО: max_value изначально поставлен на 2, чтобы интерфейс не врал на 1 уровне
 progress_bar = HealthBar(max_value=2, value=0, bar_color=color.lime, back_color=color.dark_gray, scale=(0.3, 0.03),
                          position=(0.5, 0.43), parent=camera.ui)
 progress_text = Text(text='ПРОГРЕСС ДОСТАВКИ', scale=1.0, color=color.white, position=(0.5, 0.47), parent=camera.ui)
