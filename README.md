@@ -7,7 +7,8 @@
 Ниже представлены материалы, демонстрирующие работоспособность созданного приложения. Для корректного отображения файлы preview.png и gameplay.gif должны находиться в корневой директории репозитория.
 
 ### Скриншот главного экрана
-![Интерфейс программы]<img width="1841" height="962" alt="image" src="https://github.com/user-attachments/assets/157ce71a-cb67-4523-b58a-0d2864ac31ee" />
+![Интерфейс программы]<img width="1843" height="974" alt="image" src="https://github.com/user-attachments/assets/30a899a9-c49a-4e53-b89b-0927e80c506d" />
+
 
 
 ## Порядок запуска приложения
