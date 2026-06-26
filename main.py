@@ -75,12 +75,8 @@ ground = Entity(model='plane', texture='noise', color=color.dark_gray, scale=ter
                 position=(0, 0, 0), collider='mesh')
 sea = Entity(model='plane', color=color.azure, scale=(600, 1, 600), position=(0, -0.4, 0), specular=0.6, roughness=0.4)
 
-obstacles = []
 
-
-def create_wall(pos, scale):
-    w = Entity(model='cube', color=color.gray, position=pos, scale=scale, collider='box')
-    obstacles.append(w)
+def create_wall(pos, scale): Entity(model='cube', color=color.gray, position=pos, scale=scale, collider='box')
 
 
 create_wall((0, 2.5, 99), (200, 5, 1))
@@ -90,10 +86,9 @@ create_wall((99, 2.5, 0), (1, 5, 200))
 
 pole_positions = [(-90, -90), (90, -90), (-90, 90), (90, 90)]
 for px, pz in pole_positions:
-    create_wall((px, 10, pz), (0.6, 20, 0.6))
+    Entity(model='cube', color=color.gray, scale=(0.6, 20, 0.6), position=(px, 10, pz))
     Entity(model='cube', color=color.light_gray, scale=(2.5, 1.0, 2.5), position=(px, 20, pz))
 
-# Декоративные контейнеры ландшафта
 container_colors = [color.red, color.blue, color.green, color.orange]
 random.seed(10)
 for z_pos in range(30, 80, 15):
@@ -101,7 +96,8 @@ for z_pos in range(30, 80, 15):
         if random.choice([True, False]) and abs(x_pos) > 10:
             height = random.randint(1, 4)
             for h in range(height):
-                create_wall((x_pos, 1.8 + h * 3.6, z_pos), (8, 3.6, 5))
+                Entity(model='cube', color=random.choice(container_colors), scale=(8, 3.6, 5),
+                       position=(x_pos, 1.8 + h * 3.6, z_pos), collider='box')
 
 # --- АВТОКРАН ---
 truck = Entity(model='cube', color=color.gray, scale=(2.4, 0.7, 5.0), position=(0, 0.5, -50), collider='box')
@@ -119,6 +115,8 @@ headlight_l = Entity(model='cube', color=color.white, scale=(0.3, 0.15, 0.1), po
 headlight_r = Entity(model='cube', color=color.white, scale=(0.3, 0.15, 0.1), position=(0.9, 0.4, 2.51), parent=truck,
                      emissive=True)
 
+cabin_base.on_click = lambda: click_truck_lights()
+
 
 def click_truck_lights():
     global headlights_on
@@ -126,8 +124,6 @@ def click_truck_lights():
     headlight_l.enabled = headlights_on
     headlight_r.enabled = headlights_on
 
-
-cabin_base.on_click = click_truck_lights
 
 back_wheels, front_wheels = [], []
 
@@ -150,8 +146,8 @@ boom = Entity(model='cube', color=color.orange, scale=(0.5, 0.5, 7.0), origin_z=
 
 cable = Entity(model='cube', color=color.black, scale=(0.03, 1, 0.03), origin_y=0.5)
 hook = Entity(model='cube', color=color.dark_gray, scale=(0.6, 0.15, 0.6))
-pointer = Entity(model='arrow', color=color.lime, scale=(0.4, 0.4, 1.2), enabled=False)
 
+pointer = Entity(model='arrow', color=color.lime, scale=(0.4, 0.4, 1.2), enabled=False)
 # --- ГРУЗЫ И ЦЕЛИ ---
 cargo_list = []
 current_cargo = None
